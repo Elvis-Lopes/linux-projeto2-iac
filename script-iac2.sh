@@ -1,17 +1,19 @@
 #!/bin/bash
 
-echo "Atualizando o servidor..."
+#Atualizações
 apt-get update
 apt-get upgrade -y
+
+#Instalações
 apt-get install apache2 -y
 apt-get install unzip -y
 
-
-echo "Baixando e copiando os arquivos da aplicação..."
-
+#Copia do proejto do github
 cd /tmp
 wget https://github.com/denilsonbonatti/linux-site-dio/archive/refs/heads/main.zip
 unzip main.zip
+
+#Copiando arquivos para a pasta HTML
 cd linux-site-dio-main
 cp -R * /var/www/html/
 
